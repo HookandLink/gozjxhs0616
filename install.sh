@@ -8,7 +8,7 @@ if [ "$KIT" = "$DEST" ] || [ "$DEST" = "$HOME" ]; then
   echo "지금 위치($DEST)에는 설치할 수 없습니다. cd 로 대회 작업 폴더에 들어간 뒤 실행하세요."; exit 1
 fi
 
-mkdir -p "$DEST/.agents/skills" "$DEST/docs" "$DEST/src" "$DEST/tests" "$DEST/eval" "$DEST/snapshots"
+mkdir -p "$DEST/.agents/skills" "$DEST/docs" "$DEST/src" "$DEST/tests" "$DEST/eval" "$DEST/snapshots" "$DEST/experiments" "$DEST/submissions"
 cp -R "$KIT"/skills/* "$DEST/.agents/skills/"
 
 MARK="<!-- hackathon-kit -->"; END="<!-- /hackathon-kit -->"
@@ -32,6 +32,6 @@ fi
 
 echo ""
 echo "설치 완료. 각 터미널에서 이 폴더로 와서 실행:  codex -s workspace-write -a on-request"
-echo "Codex 안에서 /skills 로 8개가 보이는지 확인하세요."
-echo "리드: \$wjdfl → \$dlgo → \$qudahr → \$cowja → \$wpcnf"
+echo "Codex 안에서 /skills 로 10개가 보이는지 확인하세요."
+echo "리드: \$wjdfl → \$dlgo → \$qudahr → \$cowja → [\$dhfb → 팀원 → \$cowja] x2~3 → \$whgkq → \$wpcnf"
 echo "팀원: \$rngus B# → (\$cnrk B#) → \$xptmxm B#"

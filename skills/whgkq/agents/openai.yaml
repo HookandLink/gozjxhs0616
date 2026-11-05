@@ -1,0 +1,5 @@
+interface:
+  display_name: "whgkq · 조합"
+  short_description: "[리드] 실험 예측을 힐 클라이밍으로 섞기"
+policy:
+  allow_implicit_invocation: false
