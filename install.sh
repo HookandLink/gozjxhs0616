@@ -4,8 +4,8 @@ set -e
 KIT="$(cd "$(dirname "$0")" && pwd)"
 DEST="$(pwd)"
 
-if [ "$KIT" = "$DEST" ]; then
-  echo "키트 폴더가 아니라 대회 작업 폴더로 이동한 뒤 실행하세요."; exit 1
+if [ "$KIT" = "$DEST" ] || [ "$DEST" = "$HOME" ]; then
+  echo "지금 위치($DEST)에는 설치할 수 없습니다. cd 로 대회 작업 폴더에 들어간 뒤 실행하세요."; exit 1
 fi
 
 mkdir -p "$DEST/.agents/skills" "$DEST/docs" "$DEST/src" "$DEST/tests" "$DEST/eval" "$DEST/snapshots"
