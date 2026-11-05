@@ -1,0 +1,5 @@
+interface:
+  display_name: "xptmxm · 테스트"
+  short_description: "[팀원] 병목 단위 테스트"
+policy:
+  allow_implicit_invocation: false

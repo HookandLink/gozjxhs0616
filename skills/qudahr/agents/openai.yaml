@@ -1,0 +1,5 @@
+interface:
+  display_name: "qudahr · 병목"
+  short_description: "병목 설계(리드) 또는 병목 구현(팀원)"
+policy:
+  allow_implicit_invocation: false

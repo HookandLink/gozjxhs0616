@@ -1,0 +1,5 @@
+interface:
+  display_name: "cowja · 채점"
+  short_description: "[리드] 전체 파이프라인 통합 채점"
+policy:
+  allow_implicit_invocation: false

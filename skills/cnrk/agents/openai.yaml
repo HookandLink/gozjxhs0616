@@ -1,0 +1,5 @@
+interface:
+  display_name: "cnrk · 추가"
+  short_description: "[팀원] 치명적 병목 보완 후 구현"
+policy:
+  allow_implicit_invocation: false

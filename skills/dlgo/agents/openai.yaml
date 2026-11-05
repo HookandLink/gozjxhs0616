@@ -1,0 +1,5 @@
+interface:
+  display_name: "dlgo · 이해"
+  short_description: "[리드] 데이터 컬럼·관계·흐름을 쉽게 설명"
+policy:
+  allow_implicit_invocation: false

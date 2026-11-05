@@ -1,0 +1,5 @@
+interface:
+  display_name: "wpcnf · 제출"
+  short_description: "[리드] 제출 형식 점검과 설명 문서"
+policy:
+  allow_implicit_invocation: false
