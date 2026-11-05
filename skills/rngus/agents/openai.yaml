@@ -1,0 +1,5 @@
+interface:
+  display_name: "rngus · 구현"
+  short_description: "[팀원] 아이디어 조합 검토 후 구현"
+policy:
+  allow_implicit_invocation: false

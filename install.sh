@@ -11,15 +11,16 @@ fi
 mkdir -p "$DEST/.agents/skills" "$DEST/docs" "$DEST/src" "$DEST/tests" "$DEST/eval" "$DEST/snapshots"
 cp -R "$KIT"/skills/* "$DEST/.agents/skills/"
 
-MARK="<!-- hackathon-kit -->"
+MARK="<!-- hackathon-kit -->"; END="<!-- /hackathon-kit -->"
 if [ -f "$DEST/AGENTS.md" ]; then
   if grep -q "$MARK" "$DEST/AGENTS.md"; then
-    echo "AGENTS.md에 팀 규칙이 이미 있어 건너뜁니다."
-  else
-    printf "\n\n" >> "$DEST/AGENTS.md"
-    cat "$KIT/AGENTS.md" >> "$DEST/AGENTS.md"
-    echo "기존 AGENTS.md 뒤에 팀 규칙을 덧붙였습니다."
+    # 예전 팀 규칙 블록을 지우고 새 버전으로 교체 (끝 표시가 없으면 파일 끝까지)
+    awk -v m="$MARK" -v e="$END" '$0==m{skip=1;next} skip&&$0==e{skip=0;next} !skip' "$DEST/AGENTS.md" > "$DEST/AGENTS.md.tmp"
+    mv "$DEST/AGENTS.md.tmp" "$DEST/AGENTS.md"
+    echo "팀 규칙을 최신 버전으로 교체했습니다."
   fi
+  if [ -s "$DEST/AGENTS.md" ]; then printf "\n" >> "$DEST/AGENTS.md"; fi
+  cat "$KIT/AGENTS.md" >> "$DEST/AGENTS.md"
 else
   cp "$KIT/AGENTS.md" "$DEST/AGENTS.md"
 fi
@@ -30,7 +31,7 @@ if ! git -C "$DEST" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
 fi
 
 echo ""
-echo "설치 완료. 각 터미널에서 이 폴더로 와서 실행:  codex --full-auto"
-echo "Codex 안에서 /skills 로 7개가 보이는지 확인하세요."
+echo "설치 완료. 각 터미널에서 이 폴더로 와서 실행:  codex -s workspace-write -a on-request"
+echo "Codex 안에서 /skills 로 8개가 보이는지 확인하세요."
 echo "리드: \$wjdfl → \$dlgo → \$qudahr → \$cowja → \$wpcnf"
-echo "팀원: \$qudahr B# → (\$cnrk B#) → \$xptmxm B#"
+echo "팀원: \$rngus B# → (\$cnrk B#) → \$xptmxm B#"
